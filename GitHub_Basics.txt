@@ -1,0 +1,11 @@
+1. Go into your python terminal (ideally VS code)
+2. Enter "git clone https://github.com/erinmariie/ME3-DMT-5.git" - clones the repository
+3. Enter "git branch" - check what branch you are on, if on the main branch your changes will directly change the github. Instead do 4
+4. Enter "git checkout -b my-changes" - replace "my-changes" with an appropriate name for your new branch
+5. Edit code however you wish
+6. Enter "git add .
+git commit -m "Updated X feature"" - replace "Updated X feature" with what was done
+7. Enter "git push origin my-changes" - where my changes is the name for your branch
+
+Note: If you get an error of author identity enter "git config --global user.name "Your Name"
+git config --global user.email "your_github_email@example.com""
