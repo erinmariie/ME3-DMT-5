@@ -9,11 +9,11 @@ def import_xl():
     EXCEL_FILE = OUTPUT_DIR / "variables.xlsx"       # Input Excel file
     OUTPUT_FILE = OUTPUT_DIR / "variables.py"  # Output file path
 
-    # === STEP 1: Load Excel ===
+    #Loading Excel
     # Expecting first column = variable name, second column = value
     df = pd.read_excel(EXCEL_FILE, header=None, names=["variable", "value"])
 
-    # === STEP 2: Try to infer types ===
+    #Inferring Types
     def infer_type(value):
         """
         Try to convert Excel string values into Python literals (int, float, bool, etc.)
@@ -33,8 +33,8 @@ def import_xl():
 
     df["value"] = df["value"].apply(infer_type)
 
-    # === STEP 3: Generate 2025-26/variables.py ===
-    # Ensure output folder exists
+    #Generate 2025-26/variables.py
+    #Ensure output folder exists
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
